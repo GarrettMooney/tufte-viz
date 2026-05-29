@@ -18,3 +18,10 @@ claim over aparente's work and adds no license terms to it. If you are the autho
 like changes to attribution or hosting, please open an issue.
 
 Repackaging by Garrett Mooney (https://github.com/GarrettMooney).
+
+## Bundled font: ET Book
+
+The demo gallery landing page (`index.html`) uses the **ET Book** typeface, vendored
+under `fonts/et-book/`. ET Book is © 2015 Dmitry Krasny, Bonnie Scranton, and Edward Tufte,
+and is distributed under the MIT License (see `fonts/et-book/LICENSE`). Source:
+https://github.com/edwardtufte/et-book

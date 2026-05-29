@@ -5,6 +5,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>tufte-viz · demo gallery</title>
 <style>
+  /* ET Book — Edward Tufte's typeface. (c) 2015 Krasny, Scranton, Tufte. MIT-licensed.
+     Vendored under /fonts/et-book/ (see LICENSE there). */
+  @font-face {
+    font-family: "et-book";
+    src: url("fonts/et-book/roman/et-book-roman-line-figures.woff") format("woff"),
+         url("fonts/et-book/roman/et-book-roman-line-figures.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "et-book";
+    src: url("fonts/et-book/italic/et-book-display-italic-old-style-figures.woff") format("woff"),
+         url("fonts/et-book/italic/et-book-display-italic-old-style-figures.ttf") format("truetype");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "et-book";
+    src: url("fonts/et-book/bold/et-book-bold-line-figures.woff") format("woff"),
+         url("fonts/et-book/bold/et-book-bold-line-figures.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+
   :root {
     --ink:   #111111;
     --muted: #6b6b66;
@@ -15,11 +42,12 @@
     --accent: #7a1f1f;
   }
   * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
+  /* ET Book runs small + light; scale the rem base up ~18% to compensate. */
+  html { -webkit-text-size-adjust: 100%; font-size: 118.75%; }
   body {
     background: var(--bg);
     color: var(--ink);
-    font: 17px/1.6 "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+    font: 1rem/1.62 "et-book", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
     max-width: 42rem;
     margin: 0 auto;
     padding: clamp(2.5rem, 6vw, 5rem) 1.5rem 6rem;
