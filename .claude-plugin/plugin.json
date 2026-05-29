@@ -1,0 +1,12 @@
+{
+  "name": "tufte-viz",
+  "description": "Ideate and critique data visualizations using Edward Tufte's principles: data-ink ratio, chartjunk elimination, graphical integrity, lie factor, small multiples, and data density.",
+  "version": "1.0.0",
+  "author": {
+    "name": "aparente",
+    "url": "https://gist.github.com/aparente/e48c353755958621b3c0004593105a90"
+  },
+  "homepage": "https://gist.github.com/aparente/e48c353755958621b3c0004593105a90",
+  "repository": "https://github.com/GarrettMooney/tufte-viz",
+  "keywords": ["tufte", "data-visualization", "charts", "data-ink", "skill"]
+}

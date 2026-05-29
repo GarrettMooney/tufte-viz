@@ -1,0 +1,14 @@
+{
+  "name": "tufte-viz",
+  "owner": {
+    "name": "Garrett Mooney",
+    "email": "garrettrmooney@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "tufte-viz",
+      "source": "./",
+      "description": "Ideate and critique data visualizations using Edward Tufte's principles."
+    }
+  ]
+}
