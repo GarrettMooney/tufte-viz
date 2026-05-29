@@ -5,62 +5,165 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>tufte-viz · demo gallery</title>
 <style>
-  :root { --ink: #111; --muted: #666; --rule: #ddd; --bg: #fdfdfb; }
+  :root {
+    --ink:   #111111;
+    --muted: #6b6b66;
+    --faint: #8d8d86;
+    --rule:  #e3e2dc;
+    --bg:    #fdfdfb;
+    --code-bg: #f3f2ec;
+    --accent: #7a1f1f;
+  }
+  * { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; }
   body {
     background: var(--bg);
     color: var(--ink);
-    font: 16px/1.55 Georgia, "Times New Roman", serif;
-    max-width: 46rem;
+    font: 17px/1.6 "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+    max-width: 42rem;
     margin: 0 auto;
-    padding: 3.5rem 1.25rem 5rem;
+    padding: clamp(2.5rem, 6vw, 5rem) 1.5rem 6rem;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
   }
-  h1 { font-size: 1.9rem; font-weight: normal; letter-spacing: -0.01em; margin: 0 0 .25rem; }
-  .lede { color: var(--muted); margin: 0 0 2rem; }
-  .lede a { color: inherit; }
-  ul.gallery { list-style: none; padding: 0; margin: 0; }
-  ul.gallery li { border-top: 1px solid var(--rule); padding: 1.1rem 0; }
-  ul.gallery li:last-child { border-bottom: 1px solid var(--rule); }
-  .gallery a.title { font-size: 1.15rem; text-decoration: none; color: var(--ink); }
-  .gallery a.title:hover { text-decoration: underline; }
-  .gallery .desc { color: var(--muted); font-size: .95rem; margin-top: .2rem; }
-  footer { margin-top: 3rem; color: var(--muted); font-size: .85rem; border-top: 1px solid var(--rule); padding-top: 1rem; }
-  footer a { color: inherit; }
-  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: .85em; background: #f0f0ec; padding: .1em .35em; border-radius: 3px; }
+
+  header { margin-bottom: 2.75rem; }
+  h1 {
+    font-size: clamp(1.8rem, 5vw, 2.4rem);
+    font-weight: normal;
+    letter-spacing: -0.015em;
+    line-height: 1.15;
+    margin: 0 0 .6rem;
+  }
+  .lede {
+    color: var(--muted);
+    font-size: 1.05rem;
+    font-style: italic;
+    max-width: 34rem;
+    margin: 0;
+  }
+  .lede a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--rule); }
+  .lede a:hover { border-bottom-color: var(--accent); }
+
+  ol.gallery {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: demo;
+  }
+  ol.gallery li {
+    counter-increment: demo;
+    border-top: 1px solid var(--rule);
+    padding: 1.4rem 0;
+    display: grid;
+    grid-template-columns: 2.25rem 1fr;
+    column-gap: .25rem;
+  }
+  ol.gallery li:last-child { border-bottom: 1px solid var(--rule); }
+  ol.gallery li::before {
+    content: counter(demo, decimal-leading-zero);
+    color: var(--faint);
+    font-size: .8rem;
+    font-variant-numeric: tabular-nums;
+    padding-top: .45rem;
+    letter-spacing: .02em;
+  }
+  .gallery a.title {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: var(--ink);
+    display: inline-block;
+    transition: color .12s ease;
+  }
+  .gallery a.title:hover { color: var(--accent); }
+  .gallery .desc {
+    color: var(--muted);
+    font-size: .98rem;
+    margin-top: .25rem;
+  }
+
+  .install {
+    margin-top: 3.25rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+  }
+  .install h2 {
+    font-size: .8rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    color: var(--faint);
+    margin: 0 0 .75rem;
+  }
+  pre {
+    background: var(--code-bg);
+    border-radius: 6px;
+    padding: 1rem 1.15rem;
+    margin: 0;
+    overflow-x: auto;
+    font: .85rem/1.7 "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+    color: #2a2a28;
+  }
+  pre .comment { color: var(--faint); }
+
+  footer {
+    margin-top: 2.5rem;
+    color: var(--faint);
+    font-size: .85rem;
+    font-style: italic;
+  }
+  footer a { color: var(--muted); }
 </style>
 </head>
 <body>
-  <h1>tufte-viz — demo gallery</h1>
-  <p class="lede">
-    Example data visualizations built with the <a href="https://github.com/GarrettMooney/tufte-viz">tufte-viz</a>
-    Claude Code skill, applying Edward Tufte's principles. Skill by
-    <a href="https://gist.github.com/aparente/e48c353755958621b3c0004593105a90">aparente</a>.
-  </p>
+  <header>
+    <h1>tufte-viz</h1>
+    <p class="lede">
+      A demo gallery for the
+      <a href="https://github.com/GarrettMooney/tufte-viz">tufte-viz</a>
+      Claude Code skill — data visualizations built on Edward Tufte's principles.
+      Skill by <a href="https://gist.github.com/aparente/e48c353755958621b3c0004593105a90">aparente</a>.
+    </p>
+  </header>
 
-  <ul class="gallery">
-    <li>
-      <a class="title" href="skills/tufte-viz/demo/giss-temperature.html">NASA GISS temperature anomalies</a>
-      <div class="desc">Global surface temperature anomalies as a time series.</div>
-    </li>
-    <li>
-      <a class="title" href="skills/tufte-viz/demo/kyoto-sakura.html">Kyoto cherry blossom, 812–2015</a>
-      <div class="desc">Twelve centuries of peak-bloom dates — a millennial climate record.</div>
-    </li>
-    <li>
-      <a class="title" href="skills/tufte-viz/demo/sunspot-butterfly.html">Sunspot butterfly diagram</a>
-      <div class="desc">Solar latitude of sunspots over time, the classic Maunder butterfly.</div>
-    </li>
-    <li>
-      <a class="title" href="skills/tufte-viz/demo/sunspot-pretty.html">Sunspots: austere vs. beautiful</a>
-      <div class="desc">The same sunspot data, austere versus decorated — a data-ink study.</div>
-    </li>
-  </ul>
+  <main>
+    <ol class="gallery">
+      <li>
+        <div>
+          <a class="title" href="skills/tufte-viz/demo/giss-temperature.html">NASA GISS temperature anomalies</a>
+          <div class="desc">Global surface temperature anomalies, rendered as small multiples by latitude band.</div>
+        </div>
+      </li>
+      <li>
+        <div>
+          <a class="title" href="skills/tufte-viz/demo/kyoto-sakura.html">Kyoto cherry blossom · 812–2015</a>
+          <div class="desc">Twelve centuries of peak-bloom dates — a millennial climate record in one line.</div>
+        </div>
+      </li>
+      <li>
+        <div>
+          <a class="title" href="skills/tufte-viz/demo/sunspot-butterfly.html">Sunspot butterfly diagram</a>
+          <div class="desc">Solar latitude of sunspots over time — the classic Maunder butterfly.</div>
+        </div>
+      </li>
+      <li>
+        <div>
+          <a class="title" href="skills/tufte-viz/demo/sunspot-pretty.html">Sunspots · austere vs. beautiful</a>
+          <div class="desc">The same sunspot data, austere versus decorated — a study in data-ink.</div>
+        </div>
+      </li>
+    </ol>
+
+    <section class="install">
+      <h2>Install in Claude Code</h2>
+<pre><span class="comment"># add this repo as a plugin marketplace, then install</span>
+/plugin marketplace add GarrettMooney/tufte-viz
+/plugin install tufte-viz@tufte-viz</pre>
+    </section>
+  </main>
 
   <footer>
-    Source &amp; install instructions:
-    <a href="https://github.com/GarrettMooney/tufte-viz">github.com/GarrettMooney/tufte-viz</a>.
-    Install in Claude Code with
-    <code>/plugin marketplace add GarrettMooney/tufte-viz</code>.
+    Source: <a href="https://github.com/GarrettMooney/tufte-viz">github.com/GarrettMooney/tufte-viz</a>
   </footer>
 </body>
 </html>
