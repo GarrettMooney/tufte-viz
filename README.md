@@ -10,6 +10,8 @@ elimination, graphical integrity, lie factor, small multiples, and data density.
 > installed from within Claude Code. See [ATTRIBUTION.md](./ATTRIBUTION.md) for details.
 > The original gist has no stated license; no ownership is claimed here.
 
+**🔗 Live demo gallery: [grmooney.com/tufte-viz](https://grmooney.com/tufte-viz/)**
+
 ## Install
 
 From inside Claude Code:
@@ -45,7 +47,7 @@ skills/tufte-viz/
 ├── references/
 │   ├── tufte-principles.md           # core principles (Visual Display of Quantitative Information)
 │   └── analytical-design.md          # analytical design, sparklines, layering, micro/macro
-└── demo/
+└── demo/                             # example visualizations — view live at grmooney.com/tufte-viz
     ├── giss-temperature.html
     ├── kyoto-sakura.html
     ├── sunspot-butterfly.html
