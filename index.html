@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>tufte-viz · demo gallery</title>
+<style>
+  :root { --ink: #111; --muted: #666; --rule: #ddd; --bg: #fdfdfb; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.55 Georgia, "Times New Roman", serif;
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 3.5rem 1.25rem 5rem;
+  }
+  h1 { font-size: 1.9rem; font-weight: normal; letter-spacing: -0.01em; margin: 0 0 .25rem; }
+  .lede { color: var(--muted); margin: 0 0 2rem; }
+  .lede a { color: inherit; }
+  ul.gallery { list-style: none; padding: 0; margin: 0; }
+  ul.gallery li { border-top: 1px solid var(--rule); padding: 1.1rem 0; }
+  ul.gallery li:last-child { border-bottom: 1px solid var(--rule); }
+  .gallery a.title { font-size: 1.15rem; text-decoration: none; color: var(--ink); }
+  .gallery a.title:hover { text-decoration: underline; }
+  .gallery .desc { color: var(--muted); font-size: .95rem; margin-top: .2rem; }
+  footer { margin-top: 3rem; color: var(--muted); font-size: .85rem; border-top: 1px solid var(--rule); padding-top: 1rem; }
+  footer a { color: inherit; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: .85em; background: #f0f0ec; padding: .1em .35em; border-radius: 3px; }
+</style>
+</head>
+<body>
+  <h1>tufte-viz — demo gallery</h1>
+  <p class="lede">
+    Example data visualizations built with the <a href="https://github.com/GarrettMooney/tufte-viz">tufte-viz</a>
+    Claude Code skill, applying Edward Tufte's principles. Skill by
+    <a href="https://gist.github.com/aparente/e48c353755958621b3c0004593105a90">aparente</a>.
+  </p>
+
+  <ul class="gallery">
+    <li>
+      <a class="title" href="skills/tufte-viz/demo/giss-temperature.html">NASA GISS temperature anomalies</a>
+      <div class="desc">Global surface temperature anomalies as a time series.</div>
+    </li>
+    <li>
+      <a class="title" href="skills/tufte-viz/demo/kyoto-sakura.html">Kyoto cherry blossom, 812–2015</a>
+      <div class="desc">Twelve centuries of peak-bloom dates — a millennial climate record.</div>
+    </li>
+    <li>
+      <a class="title" href="skills/tufte-viz/demo/sunspot-butterfly.html">Sunspot butterfly diagram</a>
+      <div class="desc">Solar latitude of sunspots over time, the classic Maunder butterfly.</div>
+    </li>
+    <li>
+      <a class="title" href="skills/tufte-viz/demo/sunspot-pretty.html">Sunspots: austere vs. beautiful</a>
+      <div class="desc">The same sunspot data, austere versus decorated — a data-ink study.</div>
+    </li>
+  </ul>
+
+  <footer>
+    Source &amp; install instructions:
+    <a href="https://github.com/GarrettMooney/tufte-viz">github.com/GarrettMooney/tufte-viz</a>.
+    Install in Claude Code with
+    <code>/plugin marketplace add GarrettMooney/tufte-viz</code>.
+  </footer>
+</body>
+</html>
